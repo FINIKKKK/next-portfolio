@@ -1,0 +1,6 @@
+<svg>
+  <g>
+    <line id="line" x1="0" x2="100%"></line>
+    <polyline id="wave"></polyline>
+  </g>
+</svg>
