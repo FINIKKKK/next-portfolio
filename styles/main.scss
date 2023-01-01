@@ -2004,7 +2004,7 @@
   font-size: 12px;
   line-height: 14px;
   text-align: right;
-  color: #000;
+  color: rgb(255, 0, 0);
   font-weight: 900;
   text-transform: uppercase;
   padding-bottom: 15px;
@@ -2015,7 +2015,7 @@
   height: 100px;
   filter: url('#goo');
   h1 {
-    z-index: 2;
+    z-index: 100;
     color: #000;
     text-align: right;
   }
@@ -2058,7 +2058,7 @@
     left: 0;
     opacity: 0.3;
     pointer-events: none;
-    // display: none;
+    display: none;
   }
 
   @keyframes up {
@@ -3177,7 +3177,7 @@
 
 // --------- welcome ----------
 .welcome {
-  margin-top: 250px;
+  // margin-top: 250px;
   margin-bottom: 270px;
   .welcome__inner {
     margin: 0 auto;
@@ -3315,37 +3315,35 @@
 // --------- last-works__title ----------
 .last-works__title {
   margin-top: 200px;
-  .last-works__title-inner {
-    position: relative;
-    font-family: $f2;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: -0.04em;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 25%;
-      height: 5px;
-      background-color: $main;
-      z-index: -1;
-    }
-    &::before {
-      left: 0;
-    }
-    &::after {
-      right: 0;
-    }
+  position: relative;
+  font-family: $f2;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    height: 5px;
+    background-color: $main;
+    z-index: -1;
   }
-  .last-works__title-title {
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  h3 {
     display: inline-block;
     font-size: 67px;
     line-height: 80px;
     color: $main;
     padding: 0 20px;
   }
-  .last-works__title-pretitle {
+  p {
     font-size: 24px;
     line-height: 32px;
     color: rgba(#fff, 0.75);
