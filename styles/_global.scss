@@ -8,12 +8,12 @@
 // @import url("https://fonts.googleapis.com/css?family=Raleway:300,900&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 // ---- Varies ----
-$font: "Inter";
+$font: 'Inter';
 $main: #1c1c1c;
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
-$f2: "aromanus";
-$f3: "mr_hamiltoneg";
+$f2: 'aromanus';
+$f3: 'mr_hamiltoneg';
 $mc: #d3a13b;
 $main: #6b3be7;
 $white: #fff;
@@ -43,6 +43,57 @@ body {
   background-color: #000;
   &.hidden {
     overflow: hidden;
+  }
+}
+.bggg {
+  position: relative;
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  // background: transparent url('../public/assets/img/asfalt-light.png') repeat 0 0;
+  // animation: bg-animation 0.2s infinite;
+  // animation: bg-animation2 120s infinite;
+  // opacity: 0;
+  z-index: -10;
+}
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
   }
 }
 a {
@@ -113,7 +164,7 @@ a {
 
   .input ~ .focus-border:before,
   .input ~ .focus-border:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -130,7 +181,7 @@ a {
   }
   .input ~ .focus-border i:before,
   .input ~ .focus-border i:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -172,7 +223,7 @@ a {
 .wrapper {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -301,7 +352,7 @@ html.has-scroll-smooth {
   font-weight: 500;
   border: none;
   color: #0c1016;
-  filter: url("#gooey");
+  filter: url('#gooey');
   position: relative;
   background-color: #fff;
   transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -525,7 +576,7 @@ html.has-scroll-smooth {
     opacity: 0;
   }
   &::after {
-    content: "";
+    content: '';
     top: -100%;
     left: 0;
     position: absolute;

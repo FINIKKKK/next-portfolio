@@ -4,6 +4,7 @@ import {
   Design,
   Footer,
   Projects,
+  RevealText,
   Review,
   Skills,
   Waves,
@@ -1080,17 +1081,21 @@ const HomePage: NextPage<HomePageProps> = ({}) => {
         </div>
       </section> */}
 
+      <div className="bggg"></div>
+
       <Welcome />
 
       <About />
 
       <Projects />
 
+      <Waves />
+
       <Skills />
 
-      <Design />
+      {/* <RevealText /> */}
 
-      <Waves />
+      <Design />
 
       <Review />
 

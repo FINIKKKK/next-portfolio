@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = () => {
     function generateBalls() {
       if (!gooeyAnimationsRef.current) return;
 
-      for (let i = 0; i < Math.floor(window.innerWidth / 30); i++) {
+      for (let i = 0; i < Math.floor(window.innerWidth / 70); i++) {
         const ball = document.createElement("div");
         ball.classList.add("ball");
 
@@ -46,7 +46,12 @@ export const Footer: React.FC<FooterProps> = () => {
         Layout creator <span>Dmitriy Bozhko</span>
       </h1>
 
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" hidden>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        hidden
+        className="svg-hidden"
+      >
         <defs>
           <filter id="goo">
             <feGaussianBlur

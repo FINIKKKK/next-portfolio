@@ -1,7 +1,7 @@
 import React from "react";
 import Image from 'next/image';
 
-import designImg from "../../../public/assets/img/design__img1.jpg";
+import designImg from "../../public/assets/img/design__img1.jpg";
 
 import ss from "./Design.module.scss";
 
@@ -9,9 +9,9 @@ type DesignProps = {};
 
 export const Design: React.FC<DesignProps> = () => {
   return (
-    <section className="design" data-scroll-section>
+    <section className="design" data-scroll data-scroll-section data-scroll-offset="250">
       <div className="container">
-        <div className="design__inner" data-scroll data-scroll-offset="250">
+        <div className="design__inner">
           <div
             className="design__img o-image_wrapper reveal-img"
             data-scroll

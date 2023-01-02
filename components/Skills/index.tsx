@@ -8,9 +8,14 @@ export const Skills: React.FC<SkillsProps> = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <section className="skills" data-scroll-section>
+    <section
+      className="skills"
+      data-scroll
+      data-scroll-section
+      data-scroll-offset="250"
+    >
       <div className="container">
-        <div className="skills__inner" data-scroll data-scroll-offset="250">
+        <div className="skills__inner">
           <div className="skills__info">
             <ol className="skills__list">
               <li className="skills__list-item">
@@ -44,7 +49,11 @@ export const Skills: React.FC<SkillsProps> = () => {
                 <p>Создание дизайна, Доработка дизайна</p>
               </li>
             </ol>
-            <div className="skills__year" data-scroll data-scroll-speed="1">
+            <div
+              className="skills__year"
+              data-scroll
+              data-scroll-speed="2"
+            >
               <hr />
               <p>
                 <span className="thisYear">{currentYear}</span>

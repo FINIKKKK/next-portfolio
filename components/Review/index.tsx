@@ -5,14 +5,32 @@ import ss from "./Review.module.scss";
 type ReviewProps = {};
 
 export const Review: React.FC<ReviewProps> = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <section className="review" data-scroll-section>
+    <section
+      className="review"
+      data-scroll
+      data-scroll-section
+      data-scroll-offset="250"
+    >
       <div className="container">
         <div className="review__inner">
-          <p className="review__pretitle">Portfolio 2022</p>
-          <h1 className="review__title">Portfolio</h1>
+          <div className="review__pretitle" data-scroll data-scroll-speed="1.5">
+            <p>Portfolio {currentYear}</p>
+          </div>
+          <h1 className="review__title" data-scroll data-scroll-speed="1">
+            <span>o</span>
+            <span>i</span>
+            <span>l</span>
+            <span>o</span>
+            <span>f</span>
+            <span>t</span>
+            <span>r</span>
+            <span>o</span>
+            <span>p</span>
+          </h1>
           <div className="review__content">
-            {/* <h2 className="review__content-title">Dmitriy Bozhko</h2>  */}
             <svg
               className="review__name"
               width="568.264"
@@ -35,10 +53,16 @@ export const Review: React.FC<ReviewProps> = () => {
                 />
               </g>
             </svg>
-            <p className="review__content-text">
-              Даннное портфолио представляет лишь малую часть моих возможностей,
-              которые растут с каждым днем{" "}
-            </p>
+            <div
+              className="review__content-text"
+              data-scroll
+              data-scroll-speed="2"
+            >
+              <p>
+                Даннное портфолио представляет лишь малую часть моих
+                возможностей, которые растут с каждым днем{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
