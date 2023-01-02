@@ -38,39 +38,55 @@ export const About: React.FC<AboutProps> = () => {
           <div className="top-about__info">
             <div className="top-about__info">
               <div className="top-about__info-title">
-                <div>
+                <div data-scroll data-scroll-speed="0.5">
                   <span>О</span>
                   <span>б</span>
                   <span>о</span>
                 </div>
-                <div>
+                <div data-scroll data-scroll-speed="1">
                   <span>м</span>
                   <span>н</span>
                   <span>е</span>
                 </div>
               </div>
               <p className="top-about__text">
-                  Целеустремленный, ответственный, исполнительный. Имею
-                  аналитический склад ума и логическое мышление - в процессе
-                  продумываю каждую деталь и подготавливаю удобный, в нужных
-                  местах прокомментированный, код.
-                  Иногда сам создаю дизайн сайта по просьбе клиента, исходя из
-                  его потребностей
-                <div className="resulttt"></div>
+                Целеустремленный, ответственный, исполнительный. Имею
+                аналитический склад ума и логическое мышление - в процессе
+                продумываю каждую деталь и подготавливаю удобный, в нужных
+                местах прокомментированный, код. Иногда сам создаю дизайн сайта
+                по просьбе клиента, исходя из его потребностей
               </p>
             </div>
           </div>
 
           <div className="top-about__images">
-            <div className="top-about__img1">
-              <Image src={imgAbout1} alt="about__img1" />
+            <div
+              className="top-about__img1 o-image_wrapper reveal-img"
+              data-scroll
+              data-scroll-call="dynamicBackground"
+              data-scroll-repeat
+            >
+              <div data-scroll data-scroll-speed="-2">
+                <Image src={imgAbout1} alt="about__img1" />
+              </div>
             </div>
-            {/* <svg className="top-about__images-pattern" width="20" height="20">
-                            <use xlinkHref="./img/icons/icons.svg#top-about__images-pattern" />
-                          </svg> */}
-            <div className="top-about__images-pattern"></div>
-            <div className="top-about__img2">
-              <Image src={imgAbout2} alt="about__img2" />
+            <div
+              className="top-about__images-pattern"
+              data-scroll
+              data-scroll-speed="-1"
+            >
+              <div></div>
+            </div>
+            <div
+              className="top-about__img2 o-image_wrapper reveal-img"
+              data-scroll
+              data-scroll-call="dynamicBackground"
+              data-scroll-repeat
+              data-scroll-speed="-1"
+            >
+              <div data-scroll data-scroll-speed="2">
+                <Image src={imgAbout2} alt="about__img2" />
+              </div>
             </div>
           </div>
         </div>

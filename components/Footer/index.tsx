@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = () => {
     <footer className="footer" data-scroll-section>
       <div ref={gooeyAnimationsRef} className="gooey-animations"></div>
       <h1>
-        Layout creator <span>Dmitriy Bozhko</span>
+        Спроектировал и построил <span>Dmitriy Bozhko</span>
       </h1>
 
       <svg

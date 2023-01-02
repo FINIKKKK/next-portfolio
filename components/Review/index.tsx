@@ -16,22 +16,49 @@ export const Review: React.FC<ReviewProps> = () => {
     >
       <div className="container">
         <div className="review__inner">
-          <div className="review__pretitle" data-scroll data-scroll-speed="1.5">
+          <div
+            className="review__pretitle"
+            data-scroll
+            data-scroll-speed="3"
+          >
             <p>Portfolio {currentYear}</p>
           </div>
-          <h1 className="review__title" data-scroll data-scroll-speed="1">
-            <span>o</span>
-            <span>i</span>
-            <span>l</span>
-            <span>o</span>
-            <span>f</span>
-            <span>t</span>
-            <span>r</span>
-            <span>o</span>
-            <span>p</span>
+          <h1 className="review__title">
+            <span data-scroll data-scroll-delay="0.05" data-scroll-speed="3">
+              <b>0</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.06" data-scroll-speed="3">
+              <b>i</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.07" data-scroll-speed="3">
+              <b>l</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.08" data-scroll-speed="3">
+              <b>o</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.09" data-scroll-speed="3">
+              <b>f</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.1" data-scroll-speed="3">
+              <b>t</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.11" data-scroll-speed="3">
+              <b>r</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.12" data-scroll-speed="3">
+              <b>o</b>
+            </span>
+            <span data-scroll data-scroll-delay="0.12" data-scroll-speed="3">
+              <b>p</b>
+            </span>
           </h1>
           <div className="review__content">
-            <svg
+            <svg className="review__name" viewBox="0 0 1320 300">
+              <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                Dmitriy Bozhko
+              </text>
+            </svg>
+            {/* <svg
               className="review__name"
               width="568.264"
               height="160.084"
@@ -52,11 +79,11 @@ export const Review: React.FC<ReviewProps> = () => {
                   vector-effect="non-scaling-stroke"
                 />
               </g>
-            </svg>
+            </svg> */}
             <div
               className="review__content-text"
               data-scroll
-              data-scroll-speed="2"
+              data-scroll-speed="1"
             >
               <p>
                 Даннное портфолио представляет лишь малую часть моих
