@@ -30,7 +30,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <LocomotiveScrollProvider
         options={{
           smooth: true,

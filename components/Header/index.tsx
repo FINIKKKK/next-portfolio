@@ -6,7 +6,7 @@ type HeaderProps = {};
 
 export const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="header">
+    <header className="header" data-scroll-section data-scroll-sticky>
       <div className="container">
         <nav className="nav-menu">
           <a href="index.html" className="text__logo">

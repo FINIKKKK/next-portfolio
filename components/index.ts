@@ -10,3 +10,4 @@ export * from './Welcome';
 export * from './Preloader';
 export * from './RevealText';
 export * from './Project';
+export * from './TopScreen';
