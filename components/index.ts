@@ -11,3 +11,4 @@ export * from './Preloader';
 export * from './RevealText';
 export * from './Project';
 export * from './TopScreen';
+export * from './Cursor';

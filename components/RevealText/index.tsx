@@ -35,6 +35,7 @@ export const RevealText: React.FC<RevealTextProps> = () => {
           data-scroll
           data-scroll-direction="horizontal"
           data-scroll-speed="-17"
+          data-scroll-delay="0.05"
         >
           <span>Soul Dance Soul Dance Soul Dance Soul Dance </span>
         </h2>
@@ -57,6 +58,7 @@ export const RevealText: React.FC<RevealTextProps> = () => {
           data-scroll
           data-scroll-direction="horizontal"
           data-scroll-speed="17"
+          data-scroll-delay="0.05"
         >
           <span>Soul Dance Soul Dance Soul Dance Soul Dance </span>
         </h2>

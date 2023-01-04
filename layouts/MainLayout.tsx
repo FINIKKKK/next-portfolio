@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Header } from "../components";
+import { Cursor, Footer, Header } from "../components";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 type MainLayoutProps = {
@@ -30,7 +30,10 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <>
+      <Cursor />
+
       <Header />
+
       <LocomotiveScrollProvider
         options={{
           smooth: true,

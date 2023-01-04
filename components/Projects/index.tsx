@@ -30,8 +30,8 @@ export const Projects: React.FC<ProjectsProps> = () => {
           data-scroll-offset="200"
           data-name="Посмотреть все пректы"
         >
-          <span>Посмотреть все пректы</span>
-          {/* <span>П</span>
+          {/* <span>Посмотреть все пректы</span> */}
+          <span>П</span>
           <span>о</span>
           <span>с</span>
           <span>м</span>
@@ -41,17 +41,17 @@ export const Projects: React.FC<ProjectsProps> = () => {
           <span>е</span>
           <span>т</span>
           <span>ь</span>
-          <span> </span>
+          <span className="empty-letter"> </span>
           <span>В</span>
           <span>С</span>
           <span>е</span>
-          <span> </span>
+          <span className="empty-letter"> </span>
           <span>Р</span>
           <span>а</span>
           <span>б</span>
           <span>о</span>
           <span>т</span>
-          <span>ы</span> */}
+          <span>ы</span>
         </a>
       </div>
     </section>

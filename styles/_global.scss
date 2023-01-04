@@ -596,3 +596,45 @@ html.has-scroll-smooth {
     }
   }
 }
+
+.cursor {
+  z-index: 1000;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s, width 0.3s, height 0.3s;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($main, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $main;
+  // text-transform: uppercase;
+  // font-weight: 700;
+  font-size: 12px;
+  div {
+    overflow: hidden;
+  }
+  span {
+    display: inline-block;
+    transition: 0.6s;
+    transform: translateY(100%);
+  }
+  &.active {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    span {
+      transform: translateY(0%);
+      transition-delay: 0.25s;
+    }
+  }
+  &.hidden {
+    opacity: 0 !important;
+  }
+}
