@@ -2,11 +2,23 @@ import React from "react";
 
 import ss from "./Header.module.scss";
 
-type HeaderProps = {};
+type HeaderProps = {
+  setOpenMenu: (openMenu: boolean) => void;
+};
 
-export const Header: React.FC<HeaderProps> = () => {
+export const Header: React.FC<HeaderProps> = ({ setOpenMenu }) => {
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsLoading(true);
+  }, []);
+
   return (
-    <header className="header" data-scroll-section data-scroll-sticky>
+    <header
+      className={`header ${isLoading ? "loaded" : ""}`}
+      data-scroll-section
+      data-scroll-sticky
+    >
       <div className="container">
         <nav className="nav-menu">
           <a href="index.html" className="text__logo">
@@ -26,7 +38,7 @@ export const Header: React.FC<HeaderProps> = () => {
             <span>o</span>
           </a>
 
-          <div className="menu-diamond" id="menu-diamond">
+          <div onClick={() => setOpenMenu(true)} className="menu-diamond" id="menu-diamond">
             <p>Menu</p>
             <div className="diamond diamond1"></div>
             <div className="diamond diamond2">

@@ -20,6 +20,7 @@ const HomePage: NextPage<HomePageProps> = ({}) => {
     <>
       <div className="bggg"></div>
 
+
       <TopScreen />
 
       <Welcome />

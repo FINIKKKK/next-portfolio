@@ -1,5 +1,5 @@
 import React from "react";
-import { Cursor, Footer, Header } from "../components";
+import { Cursor, Footer, Header, Menu } from "../components";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 type MainLayoutProps = {
@@ -8,6 +8,7 @@ type MainLayoutProps = {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const scrollElementRef = React.useRef<HTMLDivElement>(null);
+  const [openMenu, setOpenMenu] = React.useState(false);
 
   // React.useEffect(() => {
   //   let scroll;
@@ -32,7 +33,9 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <>
       <Cursor />
 
-      <Header />
+      <Menu isOpen={openMenu} setOpenMenu={setOpenMenu} />
+
+      <Header setOpenMenu={setOpenMenu} />
 
       <LocomotiveScrollProvider
         options={{
