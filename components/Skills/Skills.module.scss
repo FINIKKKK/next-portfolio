@@ -1,0 +1,156 @@
+@import '../../styles/variables';
+
+.skills {
+  margin-bottom: 300px;
+  .inner {
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .info {
+    height: 100%;
+    width: 85%;
+    margin-right: 90px;
+    position: relative;
+  }
+  .list {
+    counter-reset: list 1;
+    margin-bottom: 150px;
+    padding-right: 80px;
+  }
+  .item {
+    position: relative;
+    padding-left: 75px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    &::before {
+      counter-increment: list list;
+      content: counter(list);
+      position: absolute;
+      top: -5px;
+      left: 0;
+      margin-right: 25px;
+      text-align: right;
+      font-size: 40px;
+      line-height: 48px;
+      text-transform: uppercase;
+      text-align: right;
+      width: 45px;
+    }
+    h6 {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: rgba(#fff, 0.5);
+    }
+  }
+  .item:not(:last-child) {
+    margin-bottom: 35px;
+  }
+  .year {
+    p {
+      font-size: 25px;
+      line-height: 30px;
+      text-transform: uppercase;
+      overflow: hidden;
+      span {
+        transform: translateY(-150%);
+        transition: 1s ease-out;
+        display: block;
+      }
+    }
+    hr {
+      width: 420px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 15px;
+      transform: scale(0);
+      transform-origin: left;
+      transition: 1s ease-out;
+    }
+  }
+  .line {
+    height: 130%;
+    width: 3px;
+    stroke: rgba(#fff, 1);
+    position: absolute;
+    top: -150%;
+    right: 0;
+    transform: translateY(-50%);
+    background-image: url(../../public/assets/img/dashed.svg);
+    background-size: cover;
+    transition: 2s ease-out;
+    @keyframes skills-dashed {
+      from {
+        background-position-y: 0;
+      }
+      to {
+        background-position-y: 700px;
+      }
+    }
+  }
+  .title {
+    width: 15%;
+    font-size: 85px;
+    line-height: 103px;
+    text-transform: uppercase;
+    color: $main;
+    span {
+      display: block;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: 0.7s;
+    }
+  }
+}
+.skills {
+  &:global(.is-inview) {
+    .year {
+      hr {
+        transform: scale(1);
+      }
+      p span {
+        transform: translateY(0%);
+        transition-delay: 0.2s;
+      }
+    }
+    .inner {
+      .line {
+        top: 50%;
+        animation: skills-dashed linear 35s 1.7s infinite;
+      }
+      .title {
+        span {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        @for $i from 1 through 6 {
+          span:nth-child(#{$i}) {
+            transition-delay: $i * 0.15s;
+          }
+        }
+      }
+      .list {
+        .item {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        @for $i from 1 through 20 {
+          .item:nth-child(#{$i}) {
+            transition-delay: $i * 0.15s;
+          }
+        }
+      }
+    }
+  }
+}

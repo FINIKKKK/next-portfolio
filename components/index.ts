@@ -10,6 +10,6 @@ export * from './Welcome';
 export * from './Preloader';
 export * from './RevealText';
 export * from './Project';
-export * from './TopScreen';
+export * from './Top';
 export * from './Cursor';
 export * from './Menu';

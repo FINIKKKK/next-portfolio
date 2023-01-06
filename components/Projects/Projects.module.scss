@@ -1,0 +1,135 @@
+@import '../../styles/variables';
+
+.projects {
+  margin-bottom: 135px;
+  .inner {
+    margin-top: 170px;
+    margin-bottom: 170px;
+  }
+  .title {
+    margin-top: 200px;
+    position: relative;
+    font-family: $f2;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 25%;
+      height: 5px;
+      background-color: $main;
+      z-index: -1;
+      transition: 1s;
+      width: 0;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+    h3 {
+      display: inline-block;
+      font-size: 67px;
+      line-height: 80px;
+      color: $main;
+      padding: 0 20px;
+      transition: 1s;
+      opacity: 0;
+      transform: translateY(-100%) rotate(10deg);
+    }
+  }
+  .btn {
+    font-family: $f2;
+    font-size: 27px;
+    line-height: 34px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    text-transform: uppercase;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0px;
+      height: 1px;
+      background-color: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.4s;
+    }
+    &::before {
+      left: -130px;
+    }
+    &::after {
+      right: -130px;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        background-color: $main;
+      }
+    }
+    .letter {
+      font-size: 0.4em;
+    }
+    span {
+      transition: 0.7s;
+      opacity: 0;
+    }
+  }
+}
+
+.title {
+  &:global(.is-inview) {
+    &::before,
+    &::after {
+      width: 25%;
+    }
+    h3 {
+      opacity: 1;
+      transform: translateY(0%) rotate(0deg);
+    }
+    p {
+      opacity: 1;
+      transform: translateY(0%) rotate(0deg);
+    }
+  }
+}
+.btn {
+  &:global(.is-inview) {
+    &::before,
+    &::after {
+      width: 100px;
+      transition-delay: 1.5s;
+    }
+    @for $i from 1 through 24 {
+      span:nth-child(#{$i}) {
+        transition-delay: $i * 0.05s;
+        animation-delay: $i * 0.1s + 2s;
+      }
+    }
+    span {
+      animation: wave-animation 0.75s linear infinite;
+      @keyframes wave-animation {
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      opacity: 1;
+    }
+  }
+}

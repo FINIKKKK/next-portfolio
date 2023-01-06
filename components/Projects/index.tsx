@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Project } from "../Project";
 
@@ -8,14 +9,17 @@ type ProjectsProps = {};
 
 export const Projects: React.FC<ProjectsProps> = () => {
   return (
-    <section className="projects__ss" data-scroll-section>
+    <section className={ss.projects} data-scroll-section>
       <div className="container">
-        <div className="last-works__title" data-scroll data-scroll-offset="200">
+        <div
+          className={ss.title}
+          data-scroll
+          data-scroll-offset="200"
+        >
           <h3>Последнии работы</h3>
-          <p>И это еще не всё</p>
         </div>
 
-        <div className="projects__inner">
+        <div className={ss.inner}>
           {Array(3)
             .fill(0)
             .map((index: number) => (
@@ -23,14 +27,12 @@ export const Projects: React.FC<ProjectsProps> = () => {
             ))}
         </div>
 
-        <a
-          href="#"
-          className="inner__btn"
+        <Link
+          href="/works"
+          className={ss.btn}
           data-scroll
           data-scroll-offset="200"
-          data-name="Посмотреть все пректы"
         >
-          {/* <span>Посмотреть все пректы</span> */}
           <span>П</span>
           <span>о</span>
           <span>с</span>
@@ -41,18 +43,18 @@ export const Projects: React.FC<ProjectsProps> = () => {
           <span>е</span>
           <span>т</span>
           <span>ь</span>
-          <span className="empty-letter"> </span>
+          <span className={ss.empty}> </span>
           <span>В</span>
           <span>С</span>
           <span>е</span>
-          <span className="empty-letter"> </span>
+          <span className={ss.empty}> </span>
           <span>Р</span>
           <span>а</span>
           <span>б</span>
           <span>о</span>
           <span>т</span>
           <span>ы</span>
-        </a>
+        </Link>
       </div>
     </section>
   );

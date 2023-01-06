@@ -3,12 +3,11 @@ import {
   About,
   Design,
   Footer,
-  Header,
   Projects,
   RevealText,
   Review,
   Skills,
-  TopScreen,
+  Top,
   Waves,
   Welcome,
 } from "../components";
@@ -18,10 +17,9 @@ interface HomePageProps {}
 const HomePage: NextPage<HomePageProps> = ({}) => {
   return (
     <>
-      <div className="bggg"></div>
+      <div className="bg"></div>
 
-
-      <TopScreen />
+      <Top />
 
       <Welcome />
 

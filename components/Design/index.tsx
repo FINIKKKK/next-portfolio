@@ -1,7 +1,7 @@
 import React from "react";
-import Image from 'next/image';
+import Image from "next/image";
 
-import designImg from "../../public/assets/img/design__img1.jpg";
+import designImg from "../../public/assets/img/design__img.jpg";
 
 import ss from "./Design.module.scss";
 
@@ -9,11 +9,16 @@ type DesignProps = {};
 
 export const Design: React.FC<DesignProps> = () => {
   return (
-    <section className="design" data-scroll data-scroll-section data-scroll-offset="250">
+    <section
+      className={ss.design}
+      data-scroll
+      data-scroll-section
+      data-scroll-offset="250"
+    >
       <div className="container">
-        <div className="design__inner">
+        <div className={ss.inner}>
           <div
-            className="design__img o-image_wrapper reveal-img"
+            className={`${ss.img} reveal-img`}
             data-scroll
             data-scroll-call="dynamicBackground"
             data-scroll-repeat
@@ -22,13 +27,13 @@ export const Design: React.FC<DesignProps> = () => {
               <Image src={designImg} alt="" />
             </div>
           </div>
-          <div className="design__note">
+          <div className={ss.note}>
             <p>
               <span>Figma</span>
             </p>
             <hr />
           </div>
-          <div className="design__pattern" data-scroll data-scroll-speed="-2">
+          <div className={ss.pattern} data-scroll data-scroll-speed="-2">
             <svg
               width="847"
               height="843"
@@ -85,26 +90,26 @@ export const Design: React.FC<DesignProps> = () => {
               />
             </svg>
           </div>
-          <div className="design__content" data-scroll data-scroll-speed="2">
-            <h3 className="design__title">
+          <div className={ss.content} data-scroll data-scroll-speed="2">
+            <h3 className={ss.title}>
               <span>дИЗАЙН</span>
             </h3>
-            <p className="design__pretext">Дело на любителя</p>
-            <p className="design__text">
+            <p className={ss.pretext}>Дело на любителя</p>
+            <p className={ss.text}>
               Не является моей главной специализацией, но без проблем сделаю
               дизайн, если его же буду и верстать
             </p>
-            <ul className="design__list">
-              <li className="design__list-item">
-                <div className="letter">П</div>
+            <ul className={ss.list}>
+              <li className={ss.item}>
+                <div className={ss.letter}>П</div>
                 <p>Простой или сложный</p>
               </li>
-              <li className="design__list-item">
-                <div className="letter">Л</div>
+              <li className={ss.item}>
+                <div className={ss.letter}>Л</div>
                 <p>Любой стиль</p>
               </li>
-              <li className="design__list-item">
-                <div className="letter">Э</div>
+              <li className={ss.item}>
+                <div className={ss.letter}>Э</div>
                 <p>Этот сайт - пример</p>
               </li>
             </ul>

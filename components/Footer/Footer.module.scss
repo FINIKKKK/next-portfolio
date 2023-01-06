@@ -1,4 +1,3 @@
-// --------- footer ----------
 .footer {
   margin-top: 50px;
   display: flex;
@@ -14,8 +13,8 @@
   position: relative;
   width: 100vw;
   height: 100px;
-  filter: url('#goo');
-  .svg-hidden {
+  // filter: url('#goo');
+  .hidden {
     display: none;
   }
   h1 {
@@ -30,11 +29,13 @@
     left: 0;
     width: 120%;
     height: 100px;
-    clip-path: url('#wave');
+    // clip-path: url('#wave');
     background-color: rgba(rgb(216, 216, 216), 1);
     transform: scale(-1, 1);
   }
-  .footer-bg {
+
+  
+  .bg {
     position: absolute;
     width: 100%;
     height: 0px;
@@ -43,14 +44,7 @@
     opacity: 0.3;
     pointer-events: none;
   }
-  .ball {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(rgb(216, 216, 216), 1);
-    position: absolute;
-    animation: up 5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
-  }
+
   @keyframes up {
     0% {
       bottom: -20%;
@@ -82,10 +76,3 @@
     }
   }
 }
-@media only screen and (max-width: 700px) {
-  footer::after {
-    clip-path: none;
-    height: 150px;
-  }
-}
-

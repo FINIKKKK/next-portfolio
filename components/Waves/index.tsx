@@ -10,7 +10,7 @@ export const Waves: React.FC<WavesProps> = () => {
   React.useEffect(() => {
     import(`sine-waves`).then((SineWaves) => {
       var waves = new SineWaves.default({
-        el: document.getElementById("waves"),
+        el: refWaves.current,
 
         speed: 5,
 
@@ -84,9 +84,9 @@ export const Waves: React.FC<WavesProps> = () => {
   }, [refWaves.current]);
 
   return (
-    <section className="waves" data-scroll-section>
-      <div className="waves__inner">
-        <canvas ref={refWaves} id="waves"></canvas>
+    <section className={ss.waves} data-scroll-section>
+      <div className={ss.inner}>
+        <canvas ref={refWaves}></canvas>
       </div>
     </section>
   );

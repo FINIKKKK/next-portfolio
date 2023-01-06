@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import ss from "./Header.module.scss";
@@ -15,13 +16,13 @@ export const Header: React.FC<HeaderProps> = ({ setOpenMenu }) => {
 
   return (
     <header
-      className={`header ${isLoading ? "loaded" : ""}`}
+      className={`${ss.header} ${isLoading ? ss.loaded : ""}`}
       data-scroll-section
       data-scroll-sticky
     >
       <div className="container">
-        <nav className="nav-menu">
-          <a href="index.html" className="text__logo">
+        <nav className={ss.nav}>
+          <Link href="/" className={ss.logo}>
             <span>d</span>
             <span>m</span>
             <span>i</span>
@@ -36,15 +37,12 @@ export const Header: React.FC<HeaderProps> = ({ setOpenMenu }) => {
             <span>h</span>
             <span>k</span>
             <span>o</span>
-          </a>
+          </Link>
 
-          <div onClick={() => setOpenMenu(true)} className="menu-diamond" id="menu-diamond">
+          <div onClick={() => setOpenMenu(true)} className={ss.menu__btn}>
             <p>Menu</p>
-            <div className="diamond diamond1"></div>
-            <div className="diamond diamond2">
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-            </div>
+            <div className={`${ss.diamond} ${ss.diamond1}`}></div>
+            <div className={`${ss.diamond} ${ss.diamond2}`}></div>
           </div>
         </nav>
       </div>

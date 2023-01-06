@@ -8,12 +8,12 @@ type PreloaderProps = {
 
 export const Preloader: React.FC<PreloaderProps> = ({ progress }) => {
   return (
-    <div className="preloader">
-      <div className="progress">
-        <span id="progress-value">{progress}</span>%
+    <div className={ss.preloader}>
+      <div className={ss.progress}>
+        <span>{progress}</span>%
       </div>
-      <span className="circle"></span>
-      <span className="circle"></span>
+      <span className={ss.circle}></span>
+      <span className={ss.circle}></span>
     </div>
   );
 };

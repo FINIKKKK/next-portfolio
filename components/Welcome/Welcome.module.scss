@@ -1,0 +1,200 @@
+@import '../../styles/variables';
+
+// --------- welcome ----------
+.welcome {
+  margin-bottom: 270px;
+  .inner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+  }
+  .title {
+    font-family: $f2;
+    font-size: 110px;
+    line-height: 90px;
+    text-transform: uppercase;
+    .empty {
+      font-size: 0.4em;
+    }
+    svg {
+      position: relative;
+      z-index: 40;
+      margin-top: -100px;
+      margin-left: 0px;
+      text {
+        text-transform: capitalize;
+        stroke-width: 1;
+        stroke: transparent;
+        font-family: $f3;
+        font-size: 200px;
+        line-height: 200px;
+      }
+    }
+    h1 {
+      display: block;
+    }
+    h1:nth-child(2) {
+      margin-left: 100px;
+    }
+    span {
+      transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  .content__title {
+    margin-top: -70px;
+    margin-bottom: 40px;
+    svg {
+      margin-left: -40px;
+    }
+    svg text {
+      stroke-width: 1;
+      stroke: transparent;
+      font-family: $f3;
+      font-size: 220px;
+      line-height: 200px;
+    }
+    @keyframes stroke {
+      0% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgba($main, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+      }
+      70% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgba($main, 1);
+      }
+      80% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgba($main, 1);
+        stroke-width: 3;
+      }
+      100% {
+        fill: rgba($main, 1);
+        stroke: rgba($main, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+      }
+    }
+  }
+  .content {
+    width: 530px;
+    margin-left: auto;
+  }
+  .note {
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: $main;
+    margin-bottom: 30px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(130%) rotate(-10deg);
+    transition: 1s;
+    padding-left: 35px;
+    &::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      margin-right: 10px;
+      animation: bounceAlpha 1.2s infinite;
+    }
+    &::after {
+      content: '>';
+      position: absolute;
+      left: 10px;
+      margin-right: 10px;
+      animation: bounceAlpha 1.2s 0.2s infinite;
+    }
+  }
+  @keyframes bounceAlpha {
+    0% {
+      opacity: 1;
+      transform: translateX(0px) scale(1);
+    }
+    25% {
+      opacity: 0;
+      transform: translateX(10px) scale(0.9);
+    }
+    26% {
+      opacity: 0;
+      transform: translateX(-10px) scale(0.9);
+    }
+    55% {
+      opacity: 1;
+      transform: translateX(0px) scale(1);
+    }
+  }
+  .text {
+    font-size: 18px;
+    line-height: 37px;
+    span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(130%) rotate(-10deg);
+      -webkit-text-fill-color: rgba(#fff, 0.3);
+      background: linear-gradient(90deg, white, white, white);
+      background-size: 0% 100%;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-position-x: -25%;
+      transition: 1s;
+    }
+  }
+}
+.welcome {
+  &:global(.is-inview) {
+    .title {
+      h1 {
+        @for $i from 1 through 6 {
+          span:nth-child(#{$i}) {
+            transition-delay: $i * 0.15s;
+          }
+        }
+      }
+      span {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+    .title {
+      svg text {
+        animation: stroke 3s forwards alternate;
+      }
+    }
+    .content {
+      svg text {
+        animation: stroke 3s forwards alternate;
+      }
+    }
+    .note {
+      opacity: 1;
+      transform: translateY(0%);
+      transition-delay: 1s;
+    }
+    .text {
+      @for $i from 1 through 20 {
+        span:nth-child(#{$i}) {
+          transition-delay: $i * 0.07s + 1.2s;
+        }
+      }
+      span {
+        opacity: 1;
+        transform: translateY(0%);
+        animation: anim-reveal 1.7s 1.4s forwards;
+      }
+      @keyframes anim-reveal {
+        100% {
+          background-size: 100% 150%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+// ---- Global-Tags ----
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  &.hidden {
+    overflow-y: hidden;
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: $f1;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  background-color: #000;
+  &.hidden {
+    overflow: hidden;
+  }
+}
+a {
+  color: #fff;
+}
+* {
+  // user-select: none;
+}
+
+
+
+// ---- Global-Classes ----
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1440px;
+}
+
+.reveal-img {
+  position: relative;
+  overflow: hidden;
+  img {
+    opacity: 0;
+  }
+  &::after {
+    content: '';
+    top: -100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(36, 36, 36);
+  }
+  @keyframes rev-img {
+    0% {
+      top: -100%;
+    }
+    50% {
+      top: 0;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+}
+
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('../public/assets/img/bg.png') repeat 0 0;
+  animation: bg-animation 0.2s infinite;
+  z-index: -10;
+  @keyframes bg-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-5%, -5%);
+    }
+    20% {
+      transform: translate(-10%, 5%);
+    }
+    30% {
+      transform: translate(5%, -10%);
+    }
+    40% {
+      transform: translate(-5%, 15%);
+    }
+    50% {
+      transform: translate(-10%, 5%);
+    }
+    60% {
+      transform: translate(15%, 0);
+    }
+    70% {
+      transform: translate(0, 10%);
+    }
+    80% {
+      transform: translate(-15%, 0);
+    }
+    90% {
+      transform: translate(10%, 5%);
+    }
+    100% {
+      transform: translate(5%, 0);
+    }
+  }
+}
+
+// ScrollBar
+::-webkit-scrollbar {
+  width: 5px;
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+::-webkit-scrollbar-track {
+  background-color: #1c1c1c;
+}
+
+// Selection
+::selection {
+  background: rgba($main, 0.5) !important;
+}
+
+// Locomotive Scroll
+html.has-scroll-smooth {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.has-scroll-dragging .c-scrollbar,
+.has-scroll-scrolling .c-scrollbar {
+  opacity: 1;
+}
+.c-scrollbar {
+  width: 10px;
+  position: absolute;
+  right: -2px;
+  top: 0;
+  height: 100vh;
+  transform-origin: center right;
+  transform: scaleX(1);
+  transition: transform 0.2s linear;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  &:hover {
+    transform: none;
+    opacity: 1;
+  }
+}
+.c-scrollbar_thumb {
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  right: 0px;
+  transition: width 0.3s;
+}
+.c-scrollbar:hover {
+  .c-scrollbar_thumb {
+    cursor: grab;
+  }
+}
+.c-scrollbar_thumb:hover {
+  width: 7px;
+}
+
+

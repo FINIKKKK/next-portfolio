@@ -5,8 +5,9 @@ import ss from "./Cursor.module.scss";
 type CursorProps = {};
 
 export const Cursor: React.FC<CursorProps> = () => {
+  const refCursor = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
-    // --- Custom Cursor
     var cursor = {
       delay: 8,
       _x: 0,
@@ -15,7 +16,7 @@ export const Cursor: React.FC<CursorProps> = () => {
       endY: window.innerHeight / 2,
       cursorVisible: true,
       cursorEnlarged: false,
-      $outline: document.querySelector(".cursor"),
+      $outline: refCursor.current,
 
       init: function () {
         // Set up element sizes
@@ -29,18 +30,6 @@ export const Cursor: React.FC<CursorProps> = () => {
         var self = this;
 
         // Anchor hovering
-        document.querySelectorAll(".inner__btn").forEach(function (el) {
-          el.addEventListener("mouseover", function () {
-            self.cursorEnlarged = true;
-            document.querySelector(".cursor")?.classList.add("hidden");
-          });
-          el.addEventListener("mouseout", function () {
-            self.cursorEnlarged = false;
-            document.querySelector(".cursor")?.classList.remove("hidden");
-          });
-        });
-
-        // Anchor hovering
         document.querySelectorAll(".img").forEach(function (el) {
           el.addEventListener("mouseover", function () {
             self.cursorEnlarged = true;
@@ -50,16 +39,6 @@ export const Cursor: React.FC<CursorProps> = () => {
             self.cursorEnlarged = false;
             document.querySelector(".cursor")?.classList.remove("active");
           });
-        });
-
-        // Click events
-        document.addEventListener("mousedown", function () {
-          self.cursorEnlarged = true;
-          self.toggleCursorSize();
-        });
-        document.addEventListener("mouseup", function () {
-          self.cursorEnlarged = false;
-          self.toggleCursorSize();
         });
 
         document.addEventListener("mousemove", function (e) {
@@ -121,7 +100,7 @@ export const Cursor: React.FC<CursorProps> = () => {
   }, []);
 
   return (
-    <div className="cursor">
+    <div ref={refCursor} className={ss.cursor}>
       <div>
         <span>Смотреть</span>
       </div>

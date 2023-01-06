@@ -1,0 +1,148 @@
+@import '../../styles/variables';
+
+.review {
+  margin-bottom: 270px;
+  .inner {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .pretitle {
+    display: block;
+    position: absolute;
+    left: -60px;
+    top: 30px;
+    white-space: nowrap;
+  }
+  .pretitle p {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(#fff, 0.75);
+    transform: translateX(30%) translateY(30%) rotate(-90deg);
+    opacity: 0;
+    position: absolute;
+    left: -7%;
+    top: 10%;
+    transition: 1.5s;
+  }
+  .title {
+    z-index: 30;
+    font-weight: 700;
+    font-size: 141px;
+    line-height: 171px;
+    text-transform: uppercase;
+    color: $main;
+    padding-left: 85px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    b {
+      transition: 0.5s;
+      opacity: 0;
+    }
+  }
+  .content {
+    position: relative;
+    margin-top: -120px;
+    margin-left: auto;
+    width: 55%;
+    z-index: 100;
+  }
+  .text {
+    p {
+      margin-top: 30px;
+      font-size: 16px;
+      line-height: 22px;
+      color: rgba(#fff, 0.75);
+      transition: 1.5s;
+      transform: translateY(150%) rotate(10deg);
+      opacity: 0;
+    }
+  }
+  .name {
+    position: relative;
+    z-index: 40;
+    overflow: visible !important;
+    margin-left: -40px;
+    margin-bottom: 10px;
+    text {
+      text-transform: capitalize;
+      stroke-width: 1;
+      stroke: transparent;
+      font-family: $f3;
+      font-size: 200px;
+      line-height: 320px;
+    }
+  }
+}
+.review {
+  &:global(.is-inview) {
+    .pretitle p {
+      transform: translateX(0%) rotate(-90deg);
+      opacity: 1;
+      transition-delay: 1.3s;
+    }
+    .title {
+      b {
+        z-index: -100;
+        opacity: 1;
+      }
+      @for $i from 1 through 9 {
+        span:nth-child(#{$i}) b {
+          transition-delay: $i * 0.15s;
+        }
+      }
+    }
+    .text p {
+      transform: translateY(0%) rotate(0deg);
+      opacity: 1;
+      transition-delay: 1.2s;
+    }
+    .name text {
+      animation: stroke2 3s 0.4s forwards alternate;
+      @keyframes stroke2 {
+        0% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: rgba(#fff, 1);
+          stroke-dashoffset: 25%;
+          stroke-dasharray: 0 50%;
+          stroke-width: 2;
+        }
+        70% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: rgba(#fff, 1);
+        }
+        80% {
+          fill: rgba(72, 138, 20, 0);
+          stroke: rgba(#fff, 1);
+          stroke-width: 3;
+        }
+        100% {
+          fill: rgba(#fff, 1);
+          stroke: rgba(#fff, 0);
+          stroke-dashoffset: -25%;
+          stroke-dasharray: 50% 0;
+          stroke-width: 0;
+        }
+      }
+      @keyframes fill {
+        from {
+          fill: transparent;
+        }
+        to {
+          fill: #fff;
+        }
+      }
+      @keyframes dash {
+        from {
+          stroke-dashoffset: 1000;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,12 @@
 import React from "react";
-import anime from "animejs";
 
 import ss from "./Welcome.module.scss";
 
 type WelcomeProps = {};
 
 export const Welcome: React.FC<WelcomeProps> = () => {
+  const refText = React.useRef<HTMLParagraphElement>(null);
+
   React.useEffect(() => {
     function splitLines(container: any) {
       var spans = container.children,
@@ -20,20 +21,19 @@ export const Welcome: React.FC<WelcomeProps> = () => {
       }
       container.innerHTML = tmp += "</span>";
     }
-
-    splitLines(document.querySelectorAll(".welcome__content-text")[0]);
+    splitLines(refText.current);
   }, []);
 
   return (
     <section
-      className="welcome"
+      className={ss.welcome}
       data-scroll
       data-scroll-section
       data-scroll-offset="250"
     >
       <div className="container">
-        <div className="welcome__inner">
-          <div className="welcome__title">
+        <div className={ss.inner}>
+          <div className={ss.title}>
             <h1 data-scroll data-scroll-speed="1">
               <span>п</span>
               <span>р</span>
@@ -44,7 +44,7 @@ export const Welcome: React.FC<WelcomeProps> = () => {
             </h1>
             <h1 data-scroll data-scroll-speed="1.5">
               <span>я</span>
-              <span className="empty-symbol"> </span>
+              <span className={ss.empty}> </span>
               <span>Д</span>
               <span>и</span>
               <span>м</span>
@@ -52,7 +52,7 @@ export const Welcome: React.FC<WelcomeProps> = () => {
             </h1>
             <div data-scroll data-scroll-speed="2">
               <svg viewBox="0 0 1320 300">
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                <text x="50%" y="50%" dy=".35em" textAnchor="middle">
                   Fullstack
                 </text>
               </svg>
@@ -78,10 +78,14 @@ export const Welcome: React.FC<WelcomeProps> = () => {
               </g>
             </svg> */}
           </div>
-          <div className="welcome__content">
-            <div className="welcome__title-another" data-scroll data-scroll-speed="2.5">
+          <div className={ss.content}>
+            <div
+              className={ss.content__title}
+              data-scroll
+              data-scroll-speed="2.5"
+            >
               <svg viewBox="0 0 1320 300">
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                <text x="50%" y="50%" dy=".35em" textAnchor="middle">
                   Разработчик
                 </text>
               </svg>
@@ -108,12 +112,13 @@ export const Welcome: React.FC<WelcomeProps> = () => {
               </svg> */}
             </div>
             <div data-scroll data-scroll-speed="1.5">
-              <p className="welcome__content-note">
+              <p className={ss.note}>
                 От фронтенда до бекенда и всего между ними
               </p>
             </div>
             <p
-              className="welcome__content-text"
+              ref={refText}
+              className={ss.text}
               data-scroll
               data-scroll-speed="1.5"
             >

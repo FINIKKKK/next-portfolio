@@ -1,13 +1,15 @@
 import Image from "next/image";
 import React from "react";
-import imgAbout1 from "../../public/assets/img/top-about__img1.jpg";
-import imgAbout2 from "../../public/assets/img/top-about__img2.jpg";
+import imgAbout1 from "../../public/assets/img/about__img1.jpg";
+import imgAbout2 from "../../public/assets/img/about__img2.jpg";
 
 import ss from "./About.module.scss";
 
 type AboutProps = {};
 
 export const About: React.FC<AboutProps> = () => {
+  const refText = React.useRef<HTMLParagraphElement>(null);
+
   React.useEffect(() => {
     function splitLines(container: any) {
       var spans = container.children,
@@ -23,45 +25,43 @@ export const About: React.FC<AboutProps> = () => {
       container.innerHTML = tmp += "</span>";
     }
 
-    splitLines(document.querySelectorAll(".top-about__text")[0]);
+    splitLines(refText.current);
   }, []);
 
   return (
     <section
-      className="top-about"
+      className={ss.about}
       data-scroll
       data-scroll-section
       data-scroll-offset="250"
     >
       <div className="container">
-        <div className="top-about__inner">
-          <div className="top-about__info">
-            <div className="top-about__info">
-              <div className="top-about__info-title">
-                <div data-scroll data-scroll-speed="0.5">
-                  <span>О</span>
-                  <span>б</span>
-                  <span>о</span>
-                </div>
-                <div data-scroll data-scroll-speed="1">
-                  <span>м</span>
-                  <span>н</span>
-                  <span>е</span>
-                </div>
+        <div className={ss.inner}>
+          <div className={ss.info}>
+            <div className={ss.title}>
+              <div data-scroll data-scroll-speed="0.5">
+                <span>О</span>
+                <span>б</span>
+                <span>о</span>
               </div>
-              <p className="top-about__text">
-                Целеустремленный, ответственный, исполнительный. Имею
-                аналитический склад ума и логическое мышление - в процессе
-                продумываю каждую деталь и подготавливаю удобный, в нужных
-                местах прокомментированный, код. Иногда сам создаю дизайн сайта
-                по просьбе клиента, исходя из его потребностей
-              </p>
+              <div data-scroll data-scroll-speed="1">
+                <span>м</span>
+                <span>н</span>
+                <span>е</span>
+              </div>
             </div>
+            <p ref={refText} className={ss.text}>
+              Целеустремленный, ответственный, исполнительный. Имею
+              аналитический склад ума и логическое мышление - в процессе
+              продумываю каждую деталь и подготавливаю удобный, в нужных местах
+              прокомментированный, код. Иногда сам создаю дизайн сайта по
+              просьбе клиента, исходя из его потребностей
+            </p>
           </div>
 
-          <div className="top-about__images">
+          <div className={ss.images}>
             <div
-              className="top-about__img1 o-image_wrapper reveal-img"
+              className={`${ss.img1} reveal-img`}
               data-scroll
               data-scroll-call="dynamicBackground"
               data-scroll-repeat
@@ -70,15 +70,11 @@ export const About: React.FC<AboutProps> = () => {
                 <Image src={imgAbout1} alt="about__img1" />
               </div>
             </div>
-            <div
-              className="top-about__images-pattern"
-              data-scroll
-              data-scroll-speed="-1"
-            >
+            <div className={ss.pattern} data-scroll data-scroll-speed="-1">
               <div></div>
             </div>
             <div
-              className="top-about__img2 o-image_wrapper reveal-img"
+              className={`${ss.img2} reveal-img`}
               data-scroll
               data-scroll-call="dynamicBackground"
               data-scroll-repeat

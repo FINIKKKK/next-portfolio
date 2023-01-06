@@ -1,16 +1,6 @@
-// --------- Fonts ----------
-@import "fonts";
-
-
-// --------- Main ----------
-@import "reset";
-@import "global";
-@import "main";
-// @import "./main2";
-
-// --------- Plugins ----------
-// @import "../../node_modules/locomotive-scroll/dist/locomotive-scroll.min.css";  
-
-
-// --------- Media ----------
-// @import "./media";
+@import 'fonts';
+@import 'reset';
+@import 'variables';
+@import 'global';
+@import 'main';
+// @import "media";

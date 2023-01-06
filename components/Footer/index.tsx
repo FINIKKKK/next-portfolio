@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
   return (
     <footer className="footer" data-scroll-section>
-      <div ref={gooeyAnimationsRef} className="gooey-animations"></div>
+      <div ref={gooeyAnimationsRef}></div>
       <h1>
         Спроектировал и построил <span>Dmitriy Bozhko</span>
       </h1>
@@ -49,7 +49,6 @@ export const Footer: React.FC<FooterProps> = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
-        hidden
         className="svg-hidden"
       >
         <defs>
