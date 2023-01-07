@@ -1,0 +1,141 @@
+@import '../../styles/variables';
+
+.error {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .inner {
+    font-family: $f2;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .content {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  .title {
+    transition: 1s;
+    font-size: 575px;
+    line-height: 430px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(#fff, 0.5) 50%, rgba(#fff, 0.5));
+    background-size: 100% 4px;
+    animation: wobble 250ms linear infinite;
+    opacity: 0;
+    @keyframes wobble {
+      0%,
+      100% {
+        background-size: 100% 4px;
+      }
+      50% {
+        background-size: 100% 2px;
+      }
+    }
+  }
+  .text {
+    transition: 1s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .pretitle {
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 75px;
+    opacity: 0;
+  }
+  .btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 3px;
+    transition: 0.2s;
+    opacity: 0;
+    &:hover {
+      color: #000;
+      &:after {
+        height: 110%;
+      }
+    }
+    &::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 120%;
+      height: 1px;
+      background-color: #fff;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+  .icon1,
+  .icon2 {
+    height: auto;
+    position: absolute;
+    fill: #fff;
+    opacity: 0;
+    transition: 1s;
+  }
+  .icon1 {
+    bottom: 5%;
+    left: -15%;
+    width: 60px;
+    transform: rotate(-16deg);
+    animation: 8s icon1 infinite;
+    @keyframes icon1 {
+      50% {
+        transform: translateY(-35px) rotate(-12deg);
+      }
+    }
+  }
+  .icon2 {
+    bottom: 50%;
+    right: -15%;
+    width: 36px;
+    transform: rotate(40deg);
+    animation: 8s icon2 infinite;
+    @keyframes icon2 {
+      50% {
+        transform: translateY(-35px) rotate(55deg);
+      }
+    }
+  }
+}
+
+
+.error.active {
+  .title {
+    opacity: 1;
+  }
+  .text {
+    transition-delay: 0.4s;
+    opacity: 1;
+  }
+  .pretitle {
+    transition-delay: 0.75s;
+    opacity: 1;
+  }
+  .btn {
+    transition-delay: 0.75s;
+    opacity: 1;
+  }
+  .icon1 {
+    transition-delay: 1.2s;
+    opacity: 1;
+  }
+  .icon2 {
+    transition-delay: 1.4s;
+    opacity: 1;
+  }
+}
