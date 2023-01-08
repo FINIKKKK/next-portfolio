@@ -14,5 +14,3 @@ export * from "./Top";
 export * from "./Cursor";
 export * from "./Menu";
 export * from "./Error404";
-export * from "./Root/Sidebar";
-export * from "./Root/Input";

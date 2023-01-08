@@ -3,13 +3,14 @@ import React from "react";
 
 import ss from "./Sidebar.module.scss";
 
-interface SidebarProps {}
+interface SidebarProps {
+  active: number;
+  setActive: (index: number) => void;
+}
 
 const labels = ["Общее", "Проекты", "Навыки"];
 
-export const Sidebar: React.FC<SidebarProps> = () => {
-  const [activeComponent, setActiveComponent] = React.useState(0);
-
+export const Sidebar: React.FC<SidebarProps> = ({ active, setActive }) => {
   return (
     <aside className="sidebar">
       <Link href="/root/create" className="btn">
@@ -18,8 +19,8 @@ export const Sidebar: React.FC<SidebarProps> = () => {
       <ul>
         {labels.map((label, index) => (
           <li
-            onClick={() => setActiveComponent(index)}
-            className={activeComponent === index ? "active" : ""}
+            onClick={() => setActive(index)}
+            className={active === index ? "active" : ""}
             key={index}
           >
             {label}

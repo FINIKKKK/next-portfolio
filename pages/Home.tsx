@@ -17,8 +17,6 @@ interface HomePageProps {}
 const HomePage: NextPage<HomePageProps> = ({}) => {
   return (
     <>
-      <div className="bg"></div>
-
       <Top />
 
       <Welcome />
