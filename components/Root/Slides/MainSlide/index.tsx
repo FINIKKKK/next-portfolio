@@ -1,9 +1,12 @@
 import React from "react";
-import { Input } from "../Input";
 
-interface MainProps {}
+import { Input } from "components";
 
-export const Main: React.FC<MainProps> = () => {
+import ss from './MainSlide.module.scss'
+
+interface MainSlideProps {}
+
+export const MainSlide: React.FC<MainSlideProps> = () => {
   const [valueAbout, setValueAbout] = React.useState("");
   const [valueLink1, setValueLink1] = React.useState("");
   const [valueLink2, setValueLink2] = React.useState("");
@@ -12,7 +15,12 @@ export const Main: React.FC<MainProps> = () => {
   return (
     <>
       <div className="block">
-        <Input value={valueAbout} setValue={setValueAbout} label="Обо мне" isTextarea={true} />
+        <Input
+          value={valueAbout}
+          setValue={setValueAbout}
+          label="Обо мне"
+          isTextarea={true}
+        />
       </div>
 
       <div className="block">

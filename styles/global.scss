@@ -118,6 +118,36 @@ a {
   }
 }
 
+
+.block {
+  width: 100%;
+  .title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 35px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 120px;
+  }
+  .input:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.btn {
+  background-color: #fff;
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 12px 38px;
+  border-radius: 20px;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgb(179, 179, 179);
+  }
+}
+
 // ScrollBar
 ::-webkit-scrollbar {
   width: 5px;

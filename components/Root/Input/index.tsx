@@ -1,5 +1,7 @@
 import React from "react";
 
+import ss from "./Input.module.scss";
+
 interface InputProps {
   label: string;
   value: string;
@@ -19,7 +21,7 @@ export const Input: React.FC<InputProps> = ({
   const [showPassword, setShowPassword] = React.useState(false);
 
   return (
-    <div className={`input ${value || isFocus ? "focus" : ""}`}>
+    <div className={`${ss.input} ${value || isFocus ? ss.focus : ""}`}>
       <label>{label}</label>
       {isTextarea && (
         <textarea
@@ -51,7 +53,7 @@ export const Input: React.FC<InputProps> = ({
       {value && isPassword && (
         <svg
           onClick={() => setShowPassword(!showPassword)}
-          className="password"
+          className={ss.password}
           width="20"
           height="20"
         >

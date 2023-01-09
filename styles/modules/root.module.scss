@@ -1,0 +1,14 @@
+.root {
+  padding: 150px 80px;
+  .inner {
+    display: flex;
+  }
+  aside {
+    margin-right: 50px;
+    width: 20%;
+  }
+  .main {
+    width: 80%;
+    padding: 35px 0;
+  }
+}

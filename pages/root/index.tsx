@@ -1,10 +1,15 @@
-import { NextPage } from "next";
 import React from "react";
-import { AuthPopup } from "../../components/Root/AuthPopup";
-import { Sidebar } from "../../components/Root/Sidebar";
-import { Main } from "../../components/Root/Slides/Main";
-import { Projects } from "../../components/Root/Slides/Projects";
-import { Skills } from "../../components/Root/Slides/Skills";
+
+import { NextPage } from "next";
+import {
+  Auth,
+  MainSlide,
+  ProjectsSlide,
+  Sidebar,
+  SkillsSlide,
+} from "components";
+
+import ss from "../../styles/modules/root.module.scss";
 
 interface RootPageProps {}
 
@@ -12,19 +17,19 @@ const RootPage: NextPage<RootPageProps> = ({}) => {
   const [activeComponent, setActiveComponent] = React.useState(0);
 
   if (false) {
-    return <AuthPopup />;
+    return <Auth />;
   }
 
   return (
-    <section className="root">
+    <section className={ss.root}>
       <div className="container">
-        <div className="inner">
+        <div className={ss.inner}>
           <Sidebar active={activeComponent} setActive={setActiveComponent} />
 
-          <main className="main">
-            {activeComponent === 0 && <Main />}
-            {activeComponent === 1 && <Projects />}
-            {activeComponent === 2 && <Skills />}
+          <main className={ss.main}>
+            {activeComponent === 0 && <MainSlide />}
+            {activeComponent === 1 && <ProjectsSlide />}
+            {activeComponent === 2 && <SkillsSlide />}
           </main>
         </div>
       </div>

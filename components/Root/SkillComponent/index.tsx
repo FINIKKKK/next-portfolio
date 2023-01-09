@@ -1,6 +1,8 @@
 import React from "react";
 
-interface SkillProps {
+import ss from "./SkillComponent.module.scss";
+
+interface SkillComponentProps {
   title: string;
   text: string;
   setIsUpdate: (isUpdate: boolean) => void;
@@ -8,7 +10,7 @@ interface SkillProps {
   setValueDescSkill: (text: string) => void;
 }
 
-export const Skill: React.FC<SkillProps> = ({
+export const SkillComponent: React.FC<SkillComponentProps> = ({
   title,
   text,
   setIsUpdate,
@@ -23,12 +25,12 @@ export const Skill: React.FC<SkillProps> = ({
   };
 
   return (
-    <li className="skills__item">
-      <div className="content">
+    <li className={ss.item}>
+      <div className={ss.content}>
         <h6>{title}</h6>
         <p>{text}</p>
       </div>
-      <div className="btns">
+      <div className={ss.btns}>
         <svg onClick={transferData} className="edit" width="20" height="20">
           <use xlinkHref="./assets/img/icons/icons.svg#edit" />
         </svg>

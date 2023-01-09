@@ -1,0 +1,25 @@
+.about {
+  div {
+    margin-bottom: 30px;
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+  }
+  .close {
+    cursor: pointer;
+    fill: #fff;
+    width: 15px;
+    height: auto;
+    margin-left: 25px;
+    opacity: 0.65;
+    transition: 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.skills__list {
+  counter-reset: list 1;
+}

@@ -1,0 +1,40 @@
+.sidebar {
+  position: relative;
+  a {
+    margin-bottom: 50px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    right: 0;
+    top: 0;
+  }
+  ul {
+    li {
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 30px;
+      position: relative;
+      padding-left: 30px;
+      &.active {
+        &::after {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #fff;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    li:not(:last-child) {
+      margin-bottom: 35px;
+    }
+  }
+}

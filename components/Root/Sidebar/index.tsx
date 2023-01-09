@@ -12,7 +12,7 @@ const labels = ["Общее", "Проекты", "Навыки"];
 
 export const Sidebar: React.FC<SidebarProps> = ({ active, setActive }) => {
   return (
-    <aside className="sidebar">
+    <aside className={ss.sidebar}>
       <Link href="/root/create" className="btn">
         Добавить проект
       </Link>
@@ -20,7 +20,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ active, setActive }) => {
         {labels.map((label, index) => (
           <li
             onClick={() => setActive(index)}
-            className={active === index ? "active" : ""}
+            className={active === index ? ss.active : ""}
             key={index}
           >
             {label}

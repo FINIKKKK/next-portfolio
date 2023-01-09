@@ -1,7 +1,9 @@
+import React from "react";
 import { NextPage } from "next";
 import Link from "next/link";
-import React from "react";
-import { Input } from "../../components/Root/Input";
+
+import ss from '../../styles/modules/create.module.scss'
+import { Input } from "components";
 
 interface CreateProjectPageProps {}
 
@@ -18,20 +20,20 @@ const CreateProjectPage: NextPage<CreateProjectPageProps> = ({}) => {
   };
 
   return (
-    <div className="create">
+    <div className={ss.create}>
       <div className="container">
-        <div className="inner">
-          <Link href="/root" className="back">
+        <div className={ss.inner}>
+          <Link href="/root" className={ss.back}>
             <svg width="20" height="20">
               <use xlinkHref="../assets/img/icons/icons.svg#back" />
             </svg>
             <p>Назад</p>
           </Link>
 
-          <div className="img">
+          <div className={ss.img}>
             {image && <img src={URL.createObjectURL(image)} alt="img" />}
             <input onChange={onChangeImage} type="file" />
-            <div className="content">
+            <div className={ss.content}>
               <svg width="20" height="20">
                 <use xlinkHref="../assets/img/icons/icons.svg#upload" />
               </svg>

@@ -1,0 +1,49 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:not(:last-child) {
+    margin-bottom: 44px;
+  }
+  .content {
+    position: relative;
+    padding-left: 55px;
+    &::before {
+      counter-increment: list list;
+      content: counter(list);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      margin-right: 25px;
+      font-size: 40px;
+      line-height: 48px;
+      text-transform: uppercase;
+      width: 45px;
+    }
+    h6 {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: rgba(#fff, 0.5);
+    }
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    svg {
+      fill: #fff;
+      width: 20px;
+      height: auto;
+      cursor: pointer;
+    }
+    svg:not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+}

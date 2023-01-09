@@ -12,8 +12,8 @@ export const Footer: React.FC<FooterProps> = () => {
       if (!gooeyAnimationsRef.current) return;
 
       for (let i = 0; i < Math.floor(window.innerWidth / 70); i++) {
-        const ball = document.createElement("div");
-        ball.classList.add("ball");
+        const ball = document.createElement("span");
+        ball.classList.add(ss.ball);
 
         const colors = ["#d8d8d8"];
         ball.style.bottom = "-100%";
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = () => {
     function handleResize() {
       if (!gooeyAnimationsRef.current) return;
 
-      const balls = gooeyAnimationsRef.current.querySelectorAll(".ball");
+      const balls = gooeyAnimationsRef.current.getElementsByTagName("span");
       balls.forEach((ball) => ball.remove());
       generateBalls();
     }
@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = () => {
   }, []);
 
   return (
-    <footer className="footer" data-scroll-section>
+    <footer className={ss.footer} data-scroll-section>
       <div ref={gooeyAnimationsRef}></div>
       <h1>
         Спроектировал и построил <span>Dmitriy Bozhko</span>
@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
-        className="svg-hidden"
+        className={ss.hidden}
       >
         <defs>
           <filter id="goo">
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = () => {
           </filter>
         </defs>
       </svg>
-      <svg viewBox="0 0 1440 328" width="100vw" className="footer-bg">
+      <svg viewBox="0 0 1440 328" width="100vw" className={ss.bg}>
         <defs>
           <clipPath
             id="wave"

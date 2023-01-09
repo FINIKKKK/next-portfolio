@@ -13,7 +13,7 @@
   position: relative;
   width: 100vw;
   height: 100px;
-  // filter: url('#goo');
+  filter: url('#goo');
   .hidden {
     display: none;
   }
@@ -29,11 +29,18 @@
     left: 0;
     width: 120%;
     height: 100px;
-    // clip-path: url('#wave');
+    clip-path: url('#wave');
     background-color: rgba(rgb(216, 216, 216), 1);
     transform: scale(-1, 1);
   }
-
+  .ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(rgb(216, 216, 216), 1);
+    position: absolute;
+    animation: up 5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+  }
   
   .bg {
     position: absolute;
@@ -74,5 +81,11 @@
       width: 0px;
       height: 0px;
     }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .footer::after {
+    clip-path: none;
+    height: 150px;
   }
 }
