@@ -2,7 +2,7 @@
 
 This project is a frontend part of the portfolio created on the framework Next.js .
 
-📌 At the moment, the project is under development.
+📌 **At the moment, the project is under development.**
 
 The project contains various beautiful animations and 3D graphics that add uniqueness and showiness to the project. The project also has an administrative panel that provides content management.
 
@@ -15,4 +15,4 @@ The project contains various beautiful animations and 3D graphics that add uniqu
 - **Sine Waves** (animated waves)
 
 ## Demo 🔥:
-http://next-portfolio.vercel.app/
+https://next-portfolio-digikrash.vercel.app/
