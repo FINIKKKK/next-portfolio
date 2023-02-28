@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "13.1.1",
     "@types/animejs": "^3.1.6",
+    "@types/imagesloaded": "^4.1.2",
     "@types/locomotive-scroll": "^4.1.0",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -20,6 +21,7 @@
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
     "gsap": "^3.11.4",
+    "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.1.4",
     "next": "13.1.1",
     "react": "18.2.0",

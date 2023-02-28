@@ -29,6 +29,7 @@ export const Top: React.FC<TopProps> = () => {
 
     // Create a Full Screen WebGL Renderer
     var renderer = new THREE.WebGLRenderer({
+      // @ts-ignore
       canvas: canvasRef.current,
       antialias: true,
       alpha: true,
@@ -148,11 +149,13 @@ export const Top: React.FC<TopProps> = () => {
     scene.add(diamond2);
 
     // Add a light
+    // @ts-ignore
     var light = new THREE.DirectionalLight(0xffffff, 1, 1000);
     light.position.set(-15, 20, 5);
     scene.add(light);
 
     //red light
+    // @ts-ignore
     var light2 = new THREE.DirectionalLight(0x000000, 0.3, 1000);
     light2.position.set(15, 20, 10);
     scene.add(light2);
@@ -160,21 +163,25 @@ export const Top: React.FC<TopProps> = () => {
     //add light for bottom
 
     // Add white light
+    // @ts-ignore
     var light3 = new THREE.DirectionalLight(0xffffff, 1, 1000);
     light3.position.set(-15, -20, 5);
     scene.add(light3);
 
     //red light
+    // @ts-ignore
     var light4 = new THREE.DirectionalLight(0x000000, 0.3, 1000);
     light4.position.set(15, -20, 10);
     scene.add(light4);
 
     // Add a light
+    // @ts-ignore
     var light5 = new THREE.DirectionalLight(0xffffff, 0.5, 1000);
     light5.position.set(2, 0, 1);
     scene.add(light5);
 
     //add light shadow
+    // @ts-ignore
     var light5 = new THREE.DirectionalLight(0x000000, 0.1, 1000);
     light5.position.set(0, 5, 2);
     scene.add(light5);
@@ -193,6 +200,7 @@ export const Top: React.FC<TopProps> = () => {
   }, []);
 
   React.useEffect(() => {
+    // @ts-ignore
     gsap.to(refPattern.current?.getElementsByTagName("path"), 1.5, {
       scale: 0.1,
       yoyo: true,
@@ -207,6 +215,7 @@ export const Top: React.FC<TopProps> = () => {
     });
 
     const target = refTitle.current;
+    // @ts-ignore
     target.innerHTML = target.textContent.replace(
       /\w/g,
       '<span data-glitch="$&">$&</span>'
@@ -220,8 +229,10 @@ export const Top: React.FC<TopProps> = () => {
         stagger: 0.1,
       },
     });
+    // @ts-ignore
     tl1.fromTo(title, 0.5, { y: 100 }, { y: 0 });
     tl1.fromTo(
+      // @ts-ignore
       title,
       2,
       {

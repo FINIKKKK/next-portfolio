@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     javascript: (function () {
       var script = document.createElement("script");
       script.onload = function () {
+        // @ts-ignore
         var stats = new Stats();
         document.body.appendChild(stats.dom);
         requestAnimationFrame(function loop() {

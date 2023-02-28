@@ -11,7 +11,6 @@ export * from "./Preloader";
 export * from "./RevealText";
 export * from "./Project";
 export * from "./Top";
-export * from "./Cursor";
 export * from "./Menu";
 export * from "./Error404";
 export * from "./Root/Sidebar";

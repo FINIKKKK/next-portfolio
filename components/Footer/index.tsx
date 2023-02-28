@@ -30,6 +30,7 @@ export const Footer: React.FC<FooterProps> = () => {
       if (!gooeyAnimationsRef.current) return;
 
       const balls = gooeyAnimationsRef.current.getElementsByTagName("span");
+      // @ts-ignore
       balls.forEach((ball) => ball.remove());
       generateBalls();
     }

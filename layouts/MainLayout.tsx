@@ -1,5 +1,5 @@
 import React from "react";
-import { Cursor, Footer, Header, Menu } from "../components";
+import { Footer, Header, Menu } from "../components";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 type MainLayoutProps = {
@@ -31,7 +31,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Cursor />
+      {/* <Cursor /> */}
 
       <Menu isOpen={openMenu} setOpenMenu={setOpenMenu} />
 

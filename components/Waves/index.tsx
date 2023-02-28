@@ -8,6 +8,7 @@ export const Waves: React.FC<WavesProps> = () => {
   const refWaves = React.useRef<HTMLCanvasElement>(null);
 
   React.useEffect(() => {
+    // @ts-ignore
     import(`sine-waves`).then((SineWaves) => {
       var waves = new SineWaves.default({
         el: refWaves.current,
@@ -75,6 +76,7 @@ export const Waves: React.FC<WavesProps> = () => {
           }
 
           // Clean Up
+          // @ts-ignore
           index = void 0;
           length = void 0;
           gradient = void 0;

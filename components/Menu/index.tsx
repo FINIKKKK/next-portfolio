@@ -15,11 +15,13 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, setOpenMenu }) => {
     if (isOpen) {
       //Script for animating the letters
 
+      // @ts-ignore
       function findRandom(n) {
+        // @ts-ignore
         let num = (1 + parseInt(Math.random() * 100)) % n;
         return num;
       }
-
+      // @ts-ignore
       function razz() {
         var letter = refTitle.current?.getElementsByTagName("span");
 
@@ -38,9 +40,11 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, setOpenMenu }) => {
         }
 
         let x = findRandom(10);
+        // @ts-ignore
         letter[x].classList.add(C);
 
         setTimeout(function () {
+          // @ts-ignore
           letter[x].classList.remove(C);
         }, 1200);
 
